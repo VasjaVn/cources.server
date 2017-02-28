@@ -20,7 +20,7 @@ public class AuthCmdRegisterHandler extends AbstractRequestHandler<RegisterReque
     }
 
     @Override
-    public Response<RegisterResponse> handle(Request<?> msg) {
+    public Response<RegisterResponse> commandHandle(Request<RegisterRequest> msg) {
         return null;
     }
 }
