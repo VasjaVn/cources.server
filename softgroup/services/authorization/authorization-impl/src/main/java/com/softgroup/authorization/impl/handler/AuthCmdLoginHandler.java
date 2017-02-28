@@ -20,7 +20,7 @@ public class AuthCmdLoginHandler extends AbstractRequestHandler<LoginRequest, Lo
     }
     
     @Override
-    public Response<LoginResponse> handle(Request<?> msg) {
+    public Response<LoginResponse> commandHandle(Request<LoginRequest> msg) {
         return null;
     }
 }
