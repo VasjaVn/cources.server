@@ -4,15 +4,15 @@ import com.softgroup.common.protocol.RequestData;
 
 public class SmsConfirmRequest implements RequestData {
 
-    private Integer authCode;
+    private String authCode;
 
     private String registrationRequestUUID;
 
-    public Integer getAuthCode() {
+    public String getAuthCode() {
         return authCode;
     }
 
-    public void setAuthCode(Integer authCode) {
+    public void setAuthCode(String authCode) {
         this.authCode = authCode;
     }
 
