@@ -20,7 +20,7 @@ public class AuthCmdSmsConfirmHandler extends AbstractRequestHandler<SmsConfirmR
     }
 
     @Override
-    public Response<SmsConfirmResponse> handle(Request<?> msg) {
+    public Response<SmsConfirmResponse> commandHandle(Request<SmsConfirmRequest> msg) {
         return null;
     }
 }
