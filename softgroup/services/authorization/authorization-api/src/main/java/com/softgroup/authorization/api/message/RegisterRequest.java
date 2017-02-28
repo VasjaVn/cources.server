@@ -13,7 +13,7 @@ public class RegisterRequest implements RequestData{
 
 	private String localeCode;
 
-	private Long deviceID;
+	private String deviceID;
 
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -31,11 +31,11 @@ public class RegisterRequest implements RequestData{
 		this.localeCode = localeCode;
 	}
 
-	public Long getDeviceID() {
+	public String getDeviceID() {
 		return deviceID;
 	}
 
-	public void setDeviceID(Long deviceID) {
+	public void setDeviceID(String deviceID) {
 		this.deviceID = deviceID;
 	}
 
