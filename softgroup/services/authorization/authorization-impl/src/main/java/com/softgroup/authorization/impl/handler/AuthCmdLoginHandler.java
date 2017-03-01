@@ -30,6 +30,8 @@ public class AuthCmdLoginHandler extends AbstractRequestHandler<LoginRequestData
         Response<LoginResponseData> response = new Response<>();
         response.setHeader( msg.getHeader() );
 
+        String deviceToken = msg.getData().getDeviceToken();
+
         LoginResponseData loginDataResp = new LoginResponseData();
         loginDataResp.setToken("TOKEN_1");
 
