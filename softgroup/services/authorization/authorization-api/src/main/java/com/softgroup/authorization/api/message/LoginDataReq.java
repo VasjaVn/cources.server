@@ -6,7 +6,7 @@ import com.softgroup.common.protocol.RequestData;
  * @author odin
  * @since 20.02.17.
  */
-public class LoginRequest implements RequestData{
+public class LoginDataReq implements RequestData{
 
 	private static final long serialVersionUID = 4895237867750981751L;
 
