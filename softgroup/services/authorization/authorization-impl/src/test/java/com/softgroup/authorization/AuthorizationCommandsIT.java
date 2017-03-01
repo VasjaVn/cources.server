@@ -41,6 +41,11 @@ public class AuthorizationCommandsIT {
         when(request.getData()).thenReturn(loginDataReq);
 
         Response<LoginResponseData> response = cmdLoginHandler.handle(request);
+        verify(cmdLoginHandler).commandHandle(request);
+        verify(request).getHeader();
+        verify(request).getData();
+        verify(loginDataReq).getDeviceToken();
+
         Integer code = response.getStatus().getCode();
         String message = response.getStatus().getMessage();
         String token = response.getData().getToken();
