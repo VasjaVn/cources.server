@@ -6,7 +6,7 @@ import com.softgroup.common.protocol.RequestData;
  * @author odin
  * @since 20.02.17.
  */
-public class RegisterDataReq implements RequestData{
+public class RegisterRequestData implements RequestData{
 	private static final long serialVersionUID = -645554380912935546L;
 
 	private String phoneNumber;

@@ -1,7 +1,7 @@
 package com.softgroup.authorization;
 
-import com.softgroup.authorization.api.message.LoginDataReq;
-import com.softgroup.authorization.api.message.LoginDataResp;
+import com.softgroup.authorization.api.message.LoginRequestData;
+import com.softgroup.authorization.api.message.LoginResponseData;
 import com.softgroup.authorization.impl.handler.AuthCmdLoginHandler;
 import com.softgroup.common.protocol.ActionHeader;
 import com.softgroup.common.protocol.Request;
@@ -13,8 +13,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class AuthorizationCommandsIT {
@@ -32,16 +31,16 @@ public class AuthorizationCommandsIT {
         when(header.getType()).thenReturn("authorization");
         when(header.getVersion()).thenReturn("V1");
 
-        LoginDataReq  loginDataReq
-                = mock(LoginDataReq.class);
+        LoginRequestData loginDataReq
+                = mock(LoginRequestData.class);
         when(loginDataReq.getDeviceToken()).thenReturn("DEVICE_TOKEN_1");
 
-        Request<LoginDataReq> request
+        Request<LoginRequestData> request
                 = mock(Request.class);
         when(request.getHeader()).thenReturn(header);
         when(request.getData()).thenReturn(loginDataReq);
 
-        Response<LoginDataResp> response = cmdLoginHandler.handle(request);
+        Response<LoginResponseData> response = cmdLoginHandler.handle(request);
         Integer code = response.getStatus().getCode();
         String message = response.getStatus().getMessage();
         String token = response.getData().getToken();

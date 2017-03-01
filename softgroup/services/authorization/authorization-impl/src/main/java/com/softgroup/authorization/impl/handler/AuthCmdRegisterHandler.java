@@ -1,7 +1,7 @@
 package com.softgroup.authorization.impl.handler;
 
-import com.softgroup.authorization.api.message.RegisterDataReq;
-import com.softgroup.authorization.api.message.RegisterDataResp;
+import com.softgroup.authorization.api.message.RegisterRequestData;
+import com.softgroup.authorization.api.message.RegisterResponseData;
 import com.softgroup.authorization.api.router.AuthorizationRequestHandler;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.Response;
@@ -9,7 +9,7 @@ import com.softgroup.common.router.api.AbstractRequestHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AuthCmdRegisterHandler extends AbstractRequestHandler<RegisterDataReq, RegisterDataResp>
+public class AuthCmdRegisterHandler extends AbstractRequestHandler<RegisterRequestData, RegisterResponseData>
         implements AuthorizationRequestHandler
 {
     private static final String AUTH_CMD_REGISTER_NAME = "register";
@@ -20,7 +20,7 @@ public class AuthCmdRegisterHandler extends AbstractRequestHandler<RegisterDataR
     }
 
     @Override
-    public Response<RegisterDataResp> commandHandle(Request<RegisterDataReq> msg) {
+    public Response<RegisterResponseData> commandHandle(Request<RegisterRequestData> msg) {
         return null;
     }
 }

@@ -1,7 +1,7 @@
 package com.softgroup.authorization.impl.handler;
 
-import com.softgroup.authorization.api.message.SmsConfirmDataReq;
-import com.softgroup.authorization.api.message.SmsConfirmDataResp;
+import com.softgroup.authorization.api.message.SmsConfirmRequestData;
+import com.softgroup.authorization.api.message.SmsConfirmResponseData;
 import com.softgroup.authorization.api.router.AuthorizationRequestHandler;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.Response;
@@ -9,7 +9,7 @@ import com.softgroup.common.router.api.AbstractRequestHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AuthCmdSmsConfirmHandler extends AbstractRequestHandler<SmsConfirmDataReq, SmsConfirmDataResp>
+public class AuthCmdSmsConfirmHandler extends AbstractRequestHandler<SmsConfirmRequestData, SmsConfirmResponseData>
         implements AuthorizationRequestHandler
 {
     private static final String AUTH_CMD_SMS_CONFIRM_NAME = "sms_confirm";
@@ -20,7 +20,7 @@ public class AuthCmdSmsConfirmHandler extends AbstractRequestHandler<SmsConfirmD
     }
 
     @Override
-    public Response<SmsConfirmDataResp> commandHandle(Request<SmsConfirmDataReq> msg) {
+    public Response<SmsConfirmResponseData> commandHandle(Request<SmsConfirmRequestData> msg) {
         return null;
     }
 }

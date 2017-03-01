@@ -2,7 +2,7 @@ package com.softgroup.authorization.api.message;
 
 import com.softgroup.common.protocol.RequestData;
 
-public class SmsConfirmDataReq implements RequestData {
+public class SmsConfirmRequestData implements RequestData {
 
     private String authCode;
 

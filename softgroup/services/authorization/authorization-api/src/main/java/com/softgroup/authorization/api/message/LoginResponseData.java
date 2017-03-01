@@ -6,7 +6,7 @@ import com.softgroup.common.protocol.ResponseData;
  * @author odin
  * @since 20.02.17.
  */
-public class LoginDataResp implements ResponseData{
+public class LoginResponseData implements ResponseData{
 
 	private String token;
 
