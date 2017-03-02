@@ -11,7 +11,7 @@ public class RegisterResponseData implements ResponseData {
 
 	private String registrationRequestUUID;
 
-	private String registrationTimeoutSec;
+	private Integer registrationTimeoutSec;
 
 	private String authCode;
 
@@ -23,11 +23,11 @@ public class RegisterResponseData implements ResponseData {
 		this.registrationRequestUUID = registrationRequestUUID;
 	}
 
-	public String getRegistrationTimeoutSec() {
+	public Integer getRegistrationTimeoutSec() {
 		return registrationTimeoutSec;
 	}
 
-	public void setRegistrationTimeoutSec(String registrationTimeoutSec) {
+	public void setRegistrationTimeoutSec(Integer registrationTimeoutSec) {
 		this.registrationTimeoutSec = registrationTimeoutSec;
 	}
 
