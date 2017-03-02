@@ -2,29 +2,25 @@ package com.softgroup.common.router.api;
 
 import com.softgroup.authorization.api.message.LoginRequestData;
 import com.softgroup.authorization.api.message.LoginResponseData;
+import com.softgroup.authorization.impl.handler.AuthCmdLoginHandler;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.Response;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
-@RunWith(MockitoJUnitRunner.class)
 public class AbstractRequestHandlerTest {
+
     @Test
     public void test() {
-        AbstractRequestHandler<LoginRequestData, LoginResponseData> arh = mock(AbstractRequestHandler.class, Mockito.CALLS_REAL_METHODS);
+        AbstractRequestHandler<LoginRequestData, LoginResponseData> abstractRequestHandler = new AuthCmdLoginHandler();
 
-        Request<LoginRequestData> loginRequest = mock(Request.class);
-        Response<LoginResponseData> loginResponse = mock(Response.class);
+        Request<LoginRequestData> loginRequest = new Request<>();
+        Response<LoginResponseData> loginResponse = abstractRequestHandler.handle( loginRequest );
 
-        when(arh.getName()).thenReturn("login");
-        when(arh.commandHandle(loginRequest)).thenReturn(loginResponse);
-        when(arh.handle(loginRequest)).thenCallRealMethod();
-
-        Response<LoginResponseData> loginResponseResult = arh.handle(loginRequest);
+        assertThat( loginResponse.getStatus().getCode(), is(200) );
+        assertThat( loginResponse.getStatus().getMessage(), is("OK") );
+        assertThat( loginResponse.getData().getToken(), is("TOKEN_1") );
     }
 }
