@@ -5,6 +5,7 @@ import com.softgroup.authorization.api.message.LoginResponseData;
 import com.softgroup.authorization.impl.handler.AuthCmdLoginHandler;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.Response;
+import com.softgroup.common.protocol.ResponseStatus;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -15,6 +16,43 @@ public class AbstractRequestHandlerTest {
     @Test
     public void test() {
         AbstractRequestHandler<LoginRequestData, LoginResponseData> abstractRequestHandler = new AuthCmdLoginHandler();
+
+        Request<LoginRequestData> loginRequest = new Request<>();
+        Response<LoginResponseData> loginResponse = abstractRequestHandler.handle( loginRequest );
+
+        assertThat( loginResponse.getStatus().getCode(), is(200) );
+        assertThat( loginResponse.getStatus().getMessage(), is("OK") );
+        assertThat( loginResponse.getData().getToken(), is("TOKEN_1") );
+    }
+
+    @Test
+    public void test2() {
+        AbstractRequestHandler<LoginRequestData, LoginResponseData> abstractRequestHandler =
+                new AbstractRequestHandler<LoginRequestData, LoginResponseData>() {
+                    @Override
+                    public Response commandHandle(Request msg) {
+                        Response<LoginResponseData> response = new Response<>();
+                        response.setHeader( msg.getHeader() );
+
+                        LoginResponseData loginDataResp = new LoginResponseData();
+                        loginDataResp.setToken("TOKEN_1");
+
+                        response.setData( loginDataResp );
+
+                        ResponseStatus status = new ResponseStatus();
+                        status.setCode(200);
+                        status.setMessage("OK");
+
+                        response.setStatus(status);
+
+                        return response;
+                    }
+
+                    @Override
+                    public String getName() {
+                        return "login";
+                    }
+                };
 
         Request<LoginRequestData> loginRequest = new Request<>();
         Response<LoginResponseData> loginResponse = abstractRequestHandler.handle( loginRequest );
