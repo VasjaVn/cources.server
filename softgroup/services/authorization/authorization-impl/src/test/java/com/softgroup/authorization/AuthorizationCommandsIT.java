@@ -6,20 +6,16 @@ import com.softgroup.authorization.impl.handler.AuthCmdLoginHandler;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.Response;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.mock;
 
-@RunWith(MockitoJUnitRunner.class)
 public class AuthorizationCommandsIT {
 
     @Test
     public void testCommandLoginHandler() {
-        Request<LoginRequestData> request = mock(Request.class);
-        
+        Request<LoginRequestData> request = new Request<>();
+
         Response<LoginResponseData> response = new AuthCmdLoginHandler().handle( request );
 
         assertThat( response.getStatus().getCode(), is(200) );
