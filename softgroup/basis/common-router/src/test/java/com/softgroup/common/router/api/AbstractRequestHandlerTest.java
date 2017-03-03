@@ -69,7 +69,7 @@ public class AbstractRequestHandlerTest {
     public void test3() {
         AbstractRequestHandler<RequestData, ResponseData> abstractRequestHandler = mock(AbstractRequestHandler.class, Mockito.CALLS_REAL_METHODS);
 
-        Request<RequestData> request = mock(Request.class);
+        Request<RequestData> request = new Request<>();
         abstractRequestHandler.handle(request);
 
         Mockito.verify(abstractRequestHandler).commandHandle(request);
