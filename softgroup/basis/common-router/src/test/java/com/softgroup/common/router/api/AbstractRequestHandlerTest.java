@@ -3,14 +3,17 @@ package com.softgroup.common.router.api;
 import com.softgroup.authorization.api.message.LoginRequestData;
 import com.softgroup.authorization.api.message.LoginResponseData;
 import com.softgroup.authorization.impl.handler.AuthCmdLoginHandler;
-import com.softgroup.common.protocol.Request;
-import com.softgroup.common.protocol.Response;
-import com.softgroup.common.protocol.ResponseStatus;
+import com.softgroup.common.protocol.*;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
 
+@RunWith(MockitoJUnitRunner.class)
 public class AbstractRequestHandlerTest {
 
     @Test
@@ -60,5 +63,15 @@ public class AbstractRequestHandlerTest {
         assertThat( loginResponse.getStatus().getCode(), is(200) );
         assertThat( loginResponse.getStatus().getMessage(), is("OK") );
         assertThat( loginResponse.getData().getToken(), is("TOKEN_1") );
+    }
+
+    @Test
+    public void test3() {
+        AbstractRequestHandler<RequestData, ResponseData> abstractRequestHandler = mock(AbstractRequestHandler.class, Mockito.CALLS_REAL_METHODS);
+
+        Request<RequestData> request = mock(Request.class);
+        abstractRequestHandler.handle(request);
+
+        Mockito.verify(abstractRequestHandler).commandHandle(request);
     }
 }
