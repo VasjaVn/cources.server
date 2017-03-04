@@ -3,13 +3,12 @@ package com.softgroup.common.protocol;
 import java.util.UUID;
 
 public class RequestBuilder<T extends RequestData> {
-    private static final String HEADER_VERSION = "v1.0";
 
     private String uuid = "";
     private String originUuid = UUID.randomUUID().toString();
     private String type;
     private String command;
-    private String version = HEADER_VERSION;
+    private String version;
 
     private T data;
 
