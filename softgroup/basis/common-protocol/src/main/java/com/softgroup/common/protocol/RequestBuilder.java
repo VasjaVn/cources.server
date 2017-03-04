@@ -8,7 +8,7 @@ public class RequestBuilder<T extends RequestData> {
     private String originUuid = UUID.randomUUID().toString();
     private String type;
     private String command;
-    private String version;
+    private String version = ProtocolVersion.VERSION_1.toString();
 
     private T data;
 
