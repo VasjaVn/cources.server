@@ -5,7 +5,7 @@ import com.softgroup.authorization.api.message.LoginResponseData;
 import com.softgroup.authorization.api.router.AuthorizationRequestHandler;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.Response;
-import com.softgroup.common.protocol.ResponseStatus;
+import com.softgroup.common.protocol.ResponseBuilder;
 import com.softgroup.common.router.api.AbstractRequestHandler;
 import org.springframework.stereotype.Component;
 
@@ -21,25 +21,22 @@ public class AuthCmdLoginHandler extends AbstractRequestHandler<LoginRequestData
     }
     
     @Override
-    public Response<LoginResponseData> commandHandle(Request<LoginRequestData> msg) {
+    public Response<LoginResponseData> commandHandle(Request<LoginRequestData> request) {
         /*
             Wrote for testing this method.
             In  the future need rewrite this.
             Using some service with access to DB.
         */
-        Response<LoginResponseData> response = new Response<>();
-        response.setHeader( msg.getHeader() );
+        LoginResponseData data = new LoginResponseData();
+        data.setToken("TOKEN_1");
 
-        LoginResponseData loginDataResp = new LoginResponseData();
-        loginDataResp.setToken("TOKEN_1");
+        ResponseBuilder<LoginRequestData, LoginResponseData> builder = new ResponseBuilder<>(request);
 
-        response.setData( loginDataResp );
-
-        ResponseStatus status = new ResponseStatus();
-        status.setCode(200);
-        status.setMessage("OK");
-
-        response.setStatus(status);
+        Response<LoginResponseData> response = builder
+                                                    .withData(data)
+                                                    .withCode(200)
+                                                    .withMessage("OK")
+                                                    .build();
 
         return response;
     }
