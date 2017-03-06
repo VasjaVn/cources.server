@@ -15,7 +15,7 @@ public class AuthorizationCommandsTest {
 
     @Test
     public void testCommandLoginHandler() {
-        String jsonLoginRequest = "{\"header\":{\"uuid\":\"UUID_1\",\"origin_uuid\":\"ORIGIN_UUID_1\",\"command\":\"login\",\"type\":\"authorization\",\"version\":\"v1\"},\"data\":{\"device_token\":\"DEVICE_TOKEN_1\"}}";
+        String jsonLoginRequest = "{\"header\":{\"uuid\":\"UUID_1\",\"origin_uuid\":\"ORIGIN_UUID_1\",\"command\":\"login\",\"type\":\"authorization\",\"version\":\"VERSION_1\"},\"data\":{\"device_token\":\"DEVICE_TOKEN_1\"}}";
 
         Request<?> request = new JacksonDataMapper().mapData(jsonLoginRequest, new TypeReference<Request<?>>() {});
 
