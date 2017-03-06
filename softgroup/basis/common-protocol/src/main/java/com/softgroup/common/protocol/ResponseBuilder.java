@@ -51,7 +51,7 @@ public class ResponseBuilder<R extends RequestData,T extends ResponseData> {
         return this;
     }
 
-    public Response<T> toResponse() {
+    public Response<T> build() {
         ActionHeader header
                 = new ActionHeader();
         header.setUuid(uuid);

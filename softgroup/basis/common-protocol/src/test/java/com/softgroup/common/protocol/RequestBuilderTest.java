@@ -30,7 +30,7 @@ public class RequestBuilderTest {
                                                         .withCommand(headerCommand)
                                                         .withVersion(headerVersion)
                                                         .withData(loginRequestData)
-                                                        .toRequest();
+                                                        .build();
 
         assertNotNull( loginRequest );
         assertNotNull( loginRequest.getHeader() );

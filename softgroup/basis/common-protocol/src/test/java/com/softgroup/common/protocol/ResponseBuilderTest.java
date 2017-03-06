@@ -41,7 +41,7 @@ public class ResponseBuilderTest {
 
     @Test
     public void testLoginResponseBuilder() {
-        Request<LoginRequestData> loginRequest = loginRequestBuilder.toRequest();
+        Request<LoginRequestData> loginRequest = loginRequestBuilder.build();
 
         ResponseBuilder<LoginRequestData, LoginResponseData> loginResponseBuilder = new ResponseBuilder<>(loginRequest);
 
@@ -50,7 +50,7 @@ public class ResponseBuilderTest {
                                                                 .withData(loginResponseData)
                                                                 .withCode(statusCode)
                                                                 .withMessage(statusMessage)
-                                                                .toResponse();
+                                                                .build();
 
          assertNotNull( loginResponse );
          assertNotNull( loginResponse.getHeader() );
@@ -70,7 +70,7 @@ public class ResponseBuilderTest {
     public  void testNotEqualVersionResponseBuilder() {
         Request<LoginRequestData> loginRequest = loginRequestBuilder
                                                             .withVersion("ANOTHER_VERSION")
-                                                            .toRequest();
+                                                            .build();
 
         ResponseBuilder<LoginRequestData, LoginResponseData> loginResponseBuilder = new ResponseBuilder<>(loginRequest);
     }

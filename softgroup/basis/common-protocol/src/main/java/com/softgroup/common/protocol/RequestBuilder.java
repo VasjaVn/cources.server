@@ -37,7 +37,7 @@ public class RequestBuilder<T extends RequestData> {
         return this;
     }
 
-    public Request<T> toRequest() {
+    public Request<T> build() {
         ActionHeader header = new ActionHeader();
         header.setUuid(uuid);
         header.setOriginUuid(originUuid);
