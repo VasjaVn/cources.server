@@ -23,6 +23,7 @@ public abstract class AbstractHandlerFactory<T extends Handler> implements Handl
         }
     }
 
+    @Override
     public T getHandler(Request<?> request) {
         return mapHandlers.get( getKey(request) );
     }
