@@ -1,4 +1,4 @@
-package com.softgroup.authorization;
+package com.softgroup.authorization.handler;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.softgroup.authorization.api.message.LoginResponseData;
