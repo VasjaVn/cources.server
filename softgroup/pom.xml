@@ -39,6 +39,18 @@
 
 			<dependency>
 				<groupId>com.softgroup</groupId>
+				<artifactId>profile-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.softgroup</groupId>
+				<artifactId>profile-impl</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.softgroup</groupId>
 				<artifactId>common-datamapper</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -114,6 +126,16 @@
 		<dependency>
 			<groupId>com.softgroup</groupId>
 			<artifactId>authorization-impl</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.softgroup</groupId>
+			<artifactId>profile-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.softgroup</groupId>
+			<artifactId>profile-impl</artifactId>
 		</dependency>
 
 		<dependency>
