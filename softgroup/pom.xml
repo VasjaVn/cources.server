@@ -33,6 +33,12 @@
 
 			<dependency>
 				<groupId>com.softgroup</groupId>
+				<artifactId>authorization-impl</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.softgroup</groupId>
 				<artifactId>common-datamapper</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -46,6 +52,12 @@
 			<dependency>
 				<groupId>com.softgroup</groupId>
 				<artifactId>common-protocol</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.softgroup</groupId>
+				<artifactId>common-factory</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
@@ -94,6 +106,20 @@
 
 	<dependencies>
 		<!-- COMMON -->
+		<dependency>
+			<groupId>com.softgroup</groupId>
+			<artifactId>authorization-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.softgroup</groupId>
+			<artifactId>authorization-impl</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.softgroup</groupId>
+			<artifactId>common-factory</artifactId>
+		</dependency>
 
 		<!-- usefullies -->
 		<dependency>
