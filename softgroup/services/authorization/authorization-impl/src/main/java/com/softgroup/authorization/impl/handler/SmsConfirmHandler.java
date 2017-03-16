@@ -9,7 +9,7 @@ import com.softgroup.common.router.api.AbstractRequestHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AuthSmsConfirmHandler
+public class SmsConfirmHandler
         extends AbstractRequestHandler<SmsConfirmRequestData, SmsConfirmResponseData>
         implements AuthorizationRequestHandler
 {

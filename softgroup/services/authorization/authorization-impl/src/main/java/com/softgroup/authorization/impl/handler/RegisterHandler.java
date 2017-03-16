@@ -9,7 +9,7 @@ import com.softgroup.common.router.api.AbstractRequestHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AuthRegisterHandler
+public class RegisterHandler
         extends AbstractRequestHandler<RegisterRequestData, RegisterResponseData>
         implements AuthorizationRequestHandler
 {

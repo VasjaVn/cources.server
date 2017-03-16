@@ -9,7 +9,7 @@ import com.softgroup.profile.api.router.ProfileRequestHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ProfGetLastTimeOnlineHandler
+public class GetLastTimeOnlineHandler
         extends AbstractRequestHandler<GetLastTimeOnlineRequestData, GetLastTimeOnlineResponseData>
         implements ProfileRequestHandler
 {
