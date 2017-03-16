@@ -2,7 +2,7 @@ package com.softgroup.authorization.handler;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.softgroup.authorization.api.message.LoginResponseData;
-import com.softgroup.authorization.impl.handler.AuthCmdLoginHandler;
+import com.softgroup.authorization.impl.handler.AuthLoginHandler;
 import com.softgroup.common.datamapper.JacksonDataMapper;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.Response;
@@ -19,7 +19,7 @@ public class AuthorizationCommandsTest {
 
         Request<?> request = new JacksonDataMapper().mapData(jsonLoginRequest, new TypeReference<Request<?>>() {});
 
-        Response<LoginResponseData> loginResponse = new AuthCmdLoginHandler().handle( request );
+        Response<LoginResponseData> loginResponse = new AuthLoginHandler().handle( request );
 
         assertThat( loginResponse.getStatus().getCode(), is(200) );
         assertThat( loginResponse.getStatus().getMessage(), is("OK") );

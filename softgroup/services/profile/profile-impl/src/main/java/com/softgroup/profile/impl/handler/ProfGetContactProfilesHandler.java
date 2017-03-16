@@ -9,7 +9,7 @@ import com.softgroup.profile.api.router.ProfileRequestHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ProfCmdGetContactProfilesHandler
+public class ProfGetContactProfilesHandler
         extends AbstractRequestHandler<GetContactProfilesRequestData, GetContactProfilesResponseData>
         implements ProfileRequestHandler
 {
