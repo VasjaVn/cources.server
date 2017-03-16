@@ -10,7 +10,8 @@ import com.softgroup.common.router.api.AbstractRequestHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AuthCmdLoginHandler extends AbstractRequestHandler<LoginRequestData, LoginResponseData>
+public class LoginHandler
+        extends AbstractRequestHandler<LoginRequestData, LoginResponseData>
         implements AuthorizationRequestHandler
 {
     private static final String AUTH_CMD_LOGIN_NAME = "login";

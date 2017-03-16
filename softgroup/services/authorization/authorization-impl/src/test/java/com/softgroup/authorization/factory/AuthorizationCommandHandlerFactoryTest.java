@@ -2,9 +2,9 @@ package com.softgroup.authorization.factory;
 
 import com.softgroup.authorization.api.router.AuthorizationRequestHandler;
 import com.softgroup.authorization.impl.factory.AuthorizationCommandHandlerFactory;
-import com.softgroup.authorization.impl.handler.AuthCmdLoginHandler;
-import com.softgroup.authorization.impl.handler.AuthCmdRegisterHandler;
-import com.softgroup.authorization.impl.handler.AuthCmdSmsConfirmHandler;
+import com.softgroup.authorization.impl.handler.LoginHandler;
+import com.softgroup.authorization.impl.handler.RegisterHandler;
+import com.softgroup.authorization.impl.handler.SmsConfirmHandler;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.RequestBuilder;
 import org.junit.Before;
@@ -29,9 +29,9 @@ public class AuthorizationCommandHandlerFactoryTest {
     @InjectMocks
     private AuthorizationCommandHandlerFactory factory;
 
-    private AuthorizationRequestHandler authCmdRegisterHandler = new AuthCmdRegisterHandler();
-    private AuthorizationRequestHandler authCmdSmsConfirmHandler = new AuthCmdSmsConfirmHandler();
-    private AuthorizationRequestHandler authCmdLoginHandler = new AuthCmdLoginHandler();
+    private AuthorizationRequestHandler authCmdRegisterHandler = new RegisterHandler();
+    private AuthorizationRequestHandler authCmdSmsConfirmHandler = new SmsConfirmHandler();
+    private AuthorizationRequestHandler authCmdLoginHandler = new LoginHandler();
 
     private String authorizationTypeName = "authorization";
 
