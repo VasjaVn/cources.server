@@ -19,6 +19,8 @@
     </modules>
 
 	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -34,7 +36,7 @@
 
 			<dependency>
 				<groupId>com.softgroup</groupId>
-				<artifactId>common-router</artifactId>
+				<artifactId>common-router-api</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
@@ -54,7 +56,7 @@
 
 		<dependency>
 			<groupId>com.softgroup</groupId>
-			<artifactId>common-router</artifactId>
+			<artifactId>common-router-api</artifactId>
 		</dependency>
 	</dependencies>
 
